@@ -17,6 +17,15 @@ public class Users extends Thread{
 	int port;
 	InetAddress addr;
 	byte[] buf = new byte[256];
+	double lambda;
+
+	public double getLambda() {
+		return lambda;
+	}
+
+	public void setLambda(double lambda) {
+		this.lambda = lambda;
+	}
 
 	public Users(String type, int id, InetAddress addr, int port) {
 		this.id = id;
@@ -68,6 +77,7 @@ public class Users extends Thread{
 			DatagramSocket socket = new DatagramSocket();
 			for (int i = 0; i < packets.length; i++) {
 				socket.send(packets[i]);
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

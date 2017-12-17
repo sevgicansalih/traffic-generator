@@ -15,7 +15,7 @@ public class CLI extends Thread{
 	String abort = "abort";
 	String createAggregateUser = "aggro";
 	String createSpecialUser = "spec";
-	String poisson = "poisson";
+	String poisson = "p";
 	public CLI() {
 		//dummy constructor
 		id = 0;
@@ -40,12 +40,13 @@ public class CLI extends Thread{
 				new Users("special",id,addr,port).start();
 				id++;
 			}else if(response.equalsIgnoreCase(poisson)){
-			
-			
+				System.out.println("new Lambda ?");
+				// TODO lamdayi ve k 'yi al bir possion probablity generate et, bunu bir saniyeye(1000 ms ) scale et ve ona gore data generate ettir.
 			}else {
-			}
 				System.out.println("Try again.");
+				
 			}
+			
 		}
 		
 	}
